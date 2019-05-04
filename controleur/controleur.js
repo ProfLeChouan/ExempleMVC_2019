@@ -10,18 +10,17 @@ $(document).ready(function(){
 
 function loadCatalogue(){
   let requete = new RequeteAjax("controleur/controleur.php");
-  let modeleInventaire = new ahuntsic_modele("modele-inventaire");
-  requete.getJSON(data => {modeleInventaire.applyTemplate_toAll(data, "contenu");});
+  let modeleInventaire = new AhuntsicModele("modele-inventaire", "contenu");
+  requete.getJSON(data => {modeleInventaire.applyTemplate_toAll(data);});
  }
 
  function ajouterPanier(noArticle){
    let requete = new RequeteAjax("controleur/controleur.php?action=ajouterPanier&noArticle=" + noArticle);
-   let modeleInventaire = new ahuntsic_modele("modele-panier");
    requete.getJSON(loadPanier);
  }
 
  function loadPanier(){
    let requete = new RequeteAjax("controleur/controleur.php?action=getPanier");
-   let modeleInventaire = new ahuntsic_modele("modele-panier");
-   requete.getJSON(data => {modeleInventaire.applyTemplate_toAll(data, "panier");});
+   let modeleInventaire = new AhuntsicModele("modele-panier", "panier");
+   requete.getJSON(data => {modeleInventaire.applyTemplate_toAll(data);});
  }

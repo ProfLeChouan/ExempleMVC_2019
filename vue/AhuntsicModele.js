@@ -1,12 +1,13 @@
 'use strict';
 
-class ahuntsic_modele{
+class AhuntsicModele{
 
-  constructor(nomModele) {
+  constructor(nomModele, nomDiv) {
     this.modele = document.getElementById(nomModele).innerHTML;
+	this.div = nomDiv;
   }
 
-  applyTemplate_toAll(txtJSON, balise){
+  applyTemplate_toAll(txtJSON){
     let objJSON = JSON.parse(txtJSON);
     let code_html ="";
 
@@ -18,6 +19,6 @@ class ahuntsic_modele{
       code_html += modele_tmp;
     }
 
-    document.getElementById(balise).innerHTML = code_html;
+    document.getElementById(this.div).innerHTML = code_html;
   }
 }
