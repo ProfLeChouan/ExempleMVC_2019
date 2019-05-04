@@ -1,0 +1,48 @@
+ <body>
+   <header>
+     <h1>Exemple d'architecture MVC</h1>
+   </header>
+
+   <nav>
+     <h1>Menu</h1>
+     <!-- Insérer le menu ici -->
+     <ul>
+       <li class="selected"><a href="#">Produits</a></li>
+       <li><a href="#">Marques</a></li>
+       <li><a href="#">Soldes</a></li>
+       <li><a href="#">Contact</a></li>
+     </ul>
+   </nav>
+
+   <section>
+     <article>
+       <h1>Mon catalogue</h1>
+       <!-- Insérer la liste des items ici -->
+       <div id = "contenu"></div>
+    </article>
+      <h1>Mon panier</h1>
+      <div id = "panier"></div>
+    <aside>
+
+    </aside>
+  </section>
+
+  <footer>
+    <p>Copyright Stephane - Tous droits reserves<br />
+      <a href="#">Me contacter !</a></p>
+  </footer>
+
+  <template id="modele-inventaire" type="text/AhuntsicModele">
+    <h2>{description}</h2>
+    <p>
+      <button type="button" onclick="ajouterPanier({noArticle})">Ajouter au panier</button>
+      {prixUnitaire} $
+    </p>
+  </template>
+
+  <template id="modele-panier" type="text/AhuntsicModele">
+    <h2>Article {libelleProduit}</h2>
+    <p>Qte : {qteProduit} prix : {prixProduit}$</p>
+  </template>
+
+</body>

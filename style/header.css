@@ -1,0 +1,24 @@
+header
+{
+  //margin-left: auto;
+  //margin-right: auto;
+  padding-left: calc((100% - 875px)/2);
+  padding-right: calc((100% - 875px)/2);
+  width: 875px;
+  height: 150px;
+  background: #000000;
+  //overflow: hidden;
+}
+
+header h1{
+  font: normal 300% 'century gothic', arial, sans-serif;
+  border-bottom: 0;
+  text-transform: none;
+  padding: 22px 0 0 0;
+  margin: 0 0 0 0;
+  color: #777;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  display: inline-block;
+  vertical-align: top;
+}
