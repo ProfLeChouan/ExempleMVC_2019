@@ -9,18 +9,19 @@ $(document).ready(function(){
 });
 
 function loadCatalogue(){
-  let requete = new RequeteAjax("controleur/controleur.php");
   let modeleInventaire = new AhuntsicModele("modele-inventaire", "contenu");
-  requete.getJSON(data => {modeleInventaire.applyTemplate_toAll(data);});
- }
-
- function ajouterPanier(noArticle){
-   let requete = new RequeteAjax("controleur/controleur.php?action=ajouterPanier&noArticle=" + noArticle);
-   requete.getJSON(loadPanier);
+  let requete = new RequeteAjaxAhuntsicModele("controleur/controleur.php", modeleInventaire); 
+  requete.openAndSend();
  }
 
  function loadPanier(){
-   let requete = new RequeteAjax("controleur/controleur.php?action=getPanier");
-   let modeleInventaire = new AhuntsicModele("modele-panier", "panier");
-   requete.getJSON(data => {modeleInventaire.applyTemplate_toAll(data);});
+   let modelePanier = new AhuntsicModele("modele-panier", "panier");
+   let requete = new RequeteAjaxAhuntsicModele("controleur/controleur.php?action=getPanier", modelePanier);
+   requete.openAndSend();
+ }
+
+ function ajouterPanier(noArticle){
+   let requete = new RequeteAjax("controleur/controleur.php?action=ajouterPanier&noArticle=" + noArticle, 
+	loadPanier);
+   requete.openAndSend();
  }
