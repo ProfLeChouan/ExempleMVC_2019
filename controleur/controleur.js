@@ -11,8 +11,10 @@ $(document).ready(function(){
 function loadCatalogue(){
   $("#template").load("vue/modeleInventaire.html", function() {
     // charger le contenu du catalogue et du panier
-	  let modeleInventaire = new AhuntsicModele("modele-inventaire", "contenu");
-	  let requete = new RequeteAjaxAhuntsicModele("controleur/controleur.php", modeleInventaire); 
+	  let modeleInventaire = new AhuntsicModele("modele-inventaire", 
+		"contenu");
+	  let requete = new RequeteAjaxAhuntsicModele("controleur/controleur.php", 
+		modeleInventaire); 
 	  requete.openAndSend();
   });
  }
