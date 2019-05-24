@@ -24,7 +24,7 @@
  {
     // Arrange
 	$inventaire = new Inventaire();
-	$expectedValue = '[{"noArticle":"1","description":"test","cheminImage":"test","prixUnitaire":"1.00","quantiteEnStock":"1","quantiteDansPanier":"0"}]';	
+	$expectedValue = '[{"noArticle":"1","description":"test ","cheminImage":"test","prixUnitaire":"1.00","quantiteEnStock":"1","quantiteDansPanier":"0"}]';	
 	
 	$inventaire->insertItem("DELETE FROM inventaire");
 	$inventaire->insertItem("INSERT INTO inventaire (`noArticle`, `description`, `cheminImage`, `prixUnitaire`, `quantiteEnStock`, `quantiteDansPanier`) VALUES
